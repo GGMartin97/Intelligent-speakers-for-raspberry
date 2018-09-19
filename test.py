@@ -1,6 +1,8 @@
+#coding=utf-8
 import requests
-
-#获取tokent
+import json
+import base64
+import os
 baidu_server = "https://openapi.baidu.com/oauth/2.0/token?"
 grant_type = "client_credentials"
 #API Key
@@ -9,7 +11,7 @@ client_id = "aMTBj0VxArQlLtNcbALiG7QV"
 client_secret = "ybr2YatdUy5XEZp8mvYkwQH1ML1YY1eo" 
 
 #拼url
-url ="%sgrant_type=%s&client_id=%s&client_secret=%s"%(server,grant_type,client_id,client_secret)
+url ="%sgrant_type=%s&client_id=%s&client_secret=%s"%(baidu_server,grant_type,client_id,client_secret)
 print(url)
 #获取token
 res = requests.post(url)
@@ -26,7 +28,7 @@ DEV_PID="1536"
 #以字节格式读取文件之后进行编码
 with open('16k.pcm', "rb") as f:
     speech = base64.b64encode(f.read()).decode('utf8')
-size = os.path.getsize(r'C:\Users\Administrator\Desktop\16k-23850.amr')
+size = os.path.getsize('16k.pcm')
 headers = { 'Content-Type' : 'application/json'} 
 url = "https://vop.baidu.com/server_api"
 data={
