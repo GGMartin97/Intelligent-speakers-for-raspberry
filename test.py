@@ -3,6 +3,7 @@ import requests
 import json
 import base64
 import os
+import wav2pcm
 baidu_server = "https://openapi.baidu.com/oauth/2.0/token?"
 grant_type = "client_credentials"
 #API Key
@@ -25,10 +26,12 @@ FORMAT = "pcm"
 CUID="raspberry"
 DEV_PID="1536"
 
+
+a=wav2pcm.wav_to_pcm('test.wav')
 #以字节格式读取文件之后进行编码
-with open('16k.pcm', "rb") as f:
+with open(a, "rb") as f:
     speech = base64.b64encode(f.read()).decode('utf8')
-size = os.path.getsize('16k.pcm')
+size = os.path.getsize(a)
 headers = { 'Content-Type' : 'application/json'} 
 url = "https://vop.baidu.com/server_api"
 data={
