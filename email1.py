@@ -17,7 +17,6 @@ camera.resolution=(2592,1944)
 
 
 def work(string):
-    string.decode('utf-8')
     timeString=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
     if string !='拍照，':
         print('noting')
