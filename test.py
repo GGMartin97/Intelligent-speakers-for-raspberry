@@ -50,3 +50,6 @@ data={
 req = requests.post(url,json.dumps(data),headers)
 result = json.loads(req.text)
 print(result["result"][0])
+print('\n')
+print(type(result))
+print(len(result))
