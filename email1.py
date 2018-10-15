@@ -7,7 +7,7 @@ camera.rotation=180
 
 def work(string):
     timeString=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
-    if string !='拍照':
+    if string !='拍照，':
         print('noting')
     else:
         camera.capture(timeString+'.jpg')
