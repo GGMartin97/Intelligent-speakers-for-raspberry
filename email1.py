@@ -10,7 +10,7 @@ from email.header import Header
 mail_host="smtp.qq.com"
 mail_user="759224761@qq.com"
 mail_pass="iirdocuhfvznbdcj"
-
+camera=picamera.PiCamera()
 sender = '759224761@qq.com'
 receivers = ['martinofcode@gmail.com']
 camera.resolution=(2592,1944)
