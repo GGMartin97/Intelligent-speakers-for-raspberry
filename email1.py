@@ -1,9 +1,20 @@
 # -*- coding: utf-8 -*-
+import time
+import picamera
+import smtplib
+from email.mime.image import MIMEImage
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.header import Header
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(13,GPIO.IN)
+mail_host="smtp.qq.com"
+mail_user="759224761@qq.com"
+mail_pass="iirdocuhfvznbdcj"
+
+sender = '759224761@qq.com'
+receivers = ['martinofcode@gmail.com']
 camera.resolution=(2592,1944)
-camera.rotation=180
+
 
 def work(string):
     timeString=time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
